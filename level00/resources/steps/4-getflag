@@ -1,0 +1,2 @@
+#GETFLAG
+cat /tmp/last_output
