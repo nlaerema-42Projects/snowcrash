@@ -1,0 +1,4 @@
+#VM
+./level03
+
+strace -f ./level03
