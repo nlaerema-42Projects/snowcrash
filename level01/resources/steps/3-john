@@ -1,0 +1,4 @@
+#LOCAL
+grep 'flag01' /tmp/passwd > /tmp/flag01
+
+john --show /tmp/flag01 | head -n 1 | tee /tmp/flag01.decrypted

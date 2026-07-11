@@ -1,0 +1,2 @@
+#VM
+grep -r 'flag01' /etc/ 2>/dev/null
