@@ -1,0 +1,6 @@
+#VM
+./level07
+
+strace -f ./level07 2>&1 | grep 'execve'
+
+strings -d ./level07
