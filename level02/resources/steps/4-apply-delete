@@ -1,0 +1,7 @@
+#LOCAL
+while grep 7f /tmp/level02.payload > /dev/null;
+do
+    perl -pe 's/(?!7f)..7f//g' -i /tmp/level02.payload
+done
+
+xxd -r -p /tmp/level02.payload | tr -cd '[:print:]\n\t\r' | tee /tmp/level02.decoded

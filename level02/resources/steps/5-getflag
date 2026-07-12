@@ -1,0 +1,2 @@
+#GETFLAG
+grep -Po '(?<=Password: )\S+' /tmp/level02.decoded

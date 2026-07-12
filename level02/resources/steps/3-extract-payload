@@ -1,0 +1,3 @@
+#LOCAL
+tshark -r /tmp/level02.pcap -T fields -e tcp.payload | tr -d ' \n' > /tmp/level02.payload
+xxd -r -p /tmp/level02.payload | tr -cd '[:print:]\n\t\r'
