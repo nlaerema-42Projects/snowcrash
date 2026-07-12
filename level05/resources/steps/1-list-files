@@ -1,0 +1,10 @@
+#VM
+ls
+
+ls /var/mail
+
+cat /var/mail/level05
+
+file /usr/sbin/openarenaserver
+
+cat /usr/sbin/openarenaserver
