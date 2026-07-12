@@ -1,0 +1,12 @@
+#VM
+ls /etc/apache2/sites-enabled
+
+ls /etc/apache2/sites-enabled/level05.conf
+
+cat /etc/apache2/sites-enabled/level05.conf
+
+ls /var/www/level04/
+
+cat /var/www/level04/level04.pl
+
+diff -s /var/www/level04/level04.pl level04.pl
