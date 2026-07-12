@@ -1,2 +1,3 @@
 #GETFLAG
-cat /tmp/last_output
+#VM
+cat /tmp/john.decrypt

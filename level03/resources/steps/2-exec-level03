@@ -1,4 +1,4 @@
 #VM
 ./level03
 
-strace -f ./level03
+strace -f ./level03 2>&1 | grep 'execve'

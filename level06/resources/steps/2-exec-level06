@@ -1,0 +1,4 @@
+#VM
+./level06
+
+strace ./level06 2>&1 | grep  'execve'

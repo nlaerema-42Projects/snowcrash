@@ -1,3 +1,2 @@
 #VM
-john_decript=$(cat /usr/sbin/john | tr 'a-z' 'l-za-k')
-echo $john_decript
+cat /usr/sbin/john | tr 'a-z' 'l-za-k' | tee /tmp/john.decrypt
