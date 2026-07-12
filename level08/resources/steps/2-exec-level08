@@ -1,0 +1,16 @@
+#VM
+./level08
+
+./level08 token
+
+./level08 /etc/timezone
+
+./level08 /etc/shadow
+
+strace -f ./level08 token 2>&1 | grep -P 'open\(|access\(|write\('
+
+strace -f ./level08 /etc/timezone 2>&1 | grep -P 'open\(|access\(|read\(|write\('
+
+strace -f ./level08 /etc/shadow 2>&1 | grep -P 'open\(|access\(|read\(|write\('
+
+strings -d ./level08
