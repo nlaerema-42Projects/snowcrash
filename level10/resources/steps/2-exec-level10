@@ -1,0 +1,16 @@
+#VM
+./level10
+
+./level10 token 127.0.0.1
+
+echo "Hello" | tee /tmp/level10.hello
+
+pkill -9 nc
+
+nc -lk localhost 6969 &
+
+sleep 1
+
+./level10 /tmp/level10.hello 127.0.0.1
+
+pkill -9 nc
