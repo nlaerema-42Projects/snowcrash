@@ -1,0 +1,3 @@
+#FLAG
+#VM
+echo "Check flag.Here is your token : $(cat /tmp/level14.flag)"

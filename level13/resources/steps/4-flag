@@ -1,0 +1,2 @@
+#FLAG
+cat /tmp/last_output | sed 's/your token is/Check flag.Here is your token :/'

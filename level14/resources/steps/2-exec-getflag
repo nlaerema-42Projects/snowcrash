@@ -1,0 +1,6 @@
+#VM
+getflag
+
+strace getflag
+
+strings -d $(which getflag)

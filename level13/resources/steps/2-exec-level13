@@ -1,0 +1,6 @@
+#VM
+./level13
+
+strace ./level13 2>&1 | grep 'getuid'
+
+strings -d ./level13

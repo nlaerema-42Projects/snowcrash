@@ -1,0 +1,6 @@
+#VM
+ls
+
+find / -user level14 -prune /proc 2>/dev/null
+
+find / -user flag14 2>/dev/null
