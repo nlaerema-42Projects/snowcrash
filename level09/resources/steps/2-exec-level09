@@ -1,0 +1,10 @@
+#VM
+./level09
+
+./level09 token
+
+./level09 "Hello World"
+
+./level09 aaaaaaa
+
+./level09 0000000

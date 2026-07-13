@@ -1,0 +1,9 @@
+#VM
+python -c '
+import sys
+
+token = open("token").read().strip()
+for i, c in enumerate(token):
+    sys.stdout.write(chr(ord(c) - i))
+
+' | tee /tmp/level09.token
