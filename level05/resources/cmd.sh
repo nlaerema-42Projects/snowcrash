@@ -1,1 +1,0 @@
-echo "getflag > /tmp/flag" > /opt/openarenaserver/cmd
