@@ -23,7 +23,16 @@ On ouvre la capture avec Wireshark et on regarde les échanges TCP.
 En remettant les données dans l'ordre, on retrouve la saisie du mot de passe :
 
 ```
-TODO
+%%& #'$& #'$ #' 38400,38400#SodaCan:0'DISPLAYSodaCan:0xterm"!""bb	B
+1!""!"""	
+
+Linux 2.6.38-8-generic-pae (::ffff:10.1.1.2) (pts/10)
+
+wwwbugs login: lleevveellXX
+Password: ft_wandrNDRelL0L
+
+Login incorrect
+wwwbugs login:
 ```
 
 On remarque cependant que certains caractères sont affichés comme `7F`.

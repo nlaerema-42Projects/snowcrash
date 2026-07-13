@@ -18,7 +18,7 @@ On peut trouver les fichiers SUID avec :
 
 ```bash
 find / -perm -4000 2>/dev/null
-````
+```
 
 Exemple :
 

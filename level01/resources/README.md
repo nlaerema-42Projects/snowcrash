@@ -44,7 +44,7 @@ Ici, le hash de `flag01` est encore présent dans `/etc/passwd`. Comme ce fichie
 On lance John The Ripper sur cette ligne :
 
 ```bash
-john 'flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/
+john 'flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash'
 ```
 
 Résultat :
@@ -53,7 +53,7 @@ Résultat :
 abcdefg
 ```
 
-On utilise ce mot de passe pour se connecter a flag01 et lancer `getflag` :
+On utilise ce mot de passe pour se connecter à flag01 et lancer `getflag` :
 
 ```
 f2av5il02puano7naaf6adaaf

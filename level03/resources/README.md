@@ -16,10 +16,10 @@ On remarque que le binaire appartient à `flag03` et possède le bit **SUID** ac
 
 Cela signifie que le programme sera exécuté avec les droits de son propriétaire, donc avec les droits de `flag03`.
 
-On analyse ensuite le binaire :
+On analyse le binaire avec `strace` pour voir quelles commandes il exécute :
 
 ```bash
-strings level03
+strace -f ./level03 2>&1 | grep 'execve'
 ```
 
 On remarque qu'il utilise la commande `echo`.

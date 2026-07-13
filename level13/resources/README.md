@@ -30,27 +30,21 @@ Il suffit de modifier la valeur de retour de `getuid()` pour faire croire au pro
 
 ## Exploitation
 
-TODO
+On copie le binaire et on modifie directement les octets correspondant à l'UID vérifié.
 
-On lance le programme avec `gdb` :
+Le programme compare l'UID de l'utilisateur avec `4242`. En remplaçant cette valeur par la nôtre dans le binaire, le programme acceptera de s'exécuter.
+
+On utilise `perl` pour effectuer le patch binaire :
 
 ```bash
-gdb ./level13
+cp ./level13 /tmp/level13
+uid=$(id -u)
+# Remplace les octets de l'UID 4242 par notre UID
+perl -i -0777 -pe "s/\x92\x10/\x$(printf '%02x' $uid)/g" /tmp/level13
+/tmp/level13
 ```
 
-On place un point d'arrêt après l'appel à `getuid()`, puis on modifie la valeur de retour :
-
-```gdb
-break main
-run
-...
-set $eax=4242
-continue
-```
-
-Le programme pense alors être exécuté par `flag13` et affiche le mot de passe.
-
-On utilise ensuite ce mot de passe pour se connecter à `flag13` et lancer :
+Le programme affiche le mot de passe. On l'utilise ensuite pour se connecter à `flag13` et lancer `getflag` :
 
 ```bash
 getflag

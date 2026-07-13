@@ -43,7 +43,7 @@ $r = x($argv[1], $argv[2]); print $r;
 
 On remarque qu'il récupère un fichier passé en argument et qu'il l'exécute avec la fonction `preg_replace()` et l'option `e`.
 
-Cette option (maintenant dreprciée) permet d'exécuter le résultat du remplacement comme du code PHP.
+Cette option (maintenant dépréciée) permet d'exécuter le résultat du remplacement comme du code PHP.
 
 ## Vulnérabilité
 
