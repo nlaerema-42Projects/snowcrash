@@ -1,0 +1,12 @@
+#VM
+grep -Po '(?<=h ~= ")[^"]+' level11.lua | tee /tmp/level11.hash
+
+curl -X POST "https://crackcrypt.com/api/v1/lookup" \
+     -H "Content-Type: application/json" \
+     -d '{
+            "alg":"sha1",
+            "hash":"'$(cat /tmp/level11.hash)'"
+        }' \
+     -s | tee /tmp/level11.response
+
+grep -Po '(?<="plaintext":")[^"]+' /tmp/level11.response | tee /tmp/level11.plaintext
